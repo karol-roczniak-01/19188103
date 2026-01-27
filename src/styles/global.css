@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Global font rendering optimizations */
+* {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Default theme (dark mode) */
+@theme {
+  --color-foreground: oklch(75% 0.183 55.934);
+  --color-background: oklch(21.113% 0.01046 39.186);
+  --color-primary: oklch(75% 0.183 55.934);
+}
+
+/* Base body styles */
+body {
+  font-family: sans-serif;
+  color: var(--color-foreground);
+  background: var(--color-background);
+}

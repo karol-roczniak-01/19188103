@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css'
 ---
 
 <Layout>
-	<Welcome />
+	<div class="h-dvh w-full p-4 flex items-center justify-center overflow-hidden">
+		
+		{/* Card */}
+		<div id="card" class="flex flex-col border md:w-md h-full overflow-hidden">
+
+			{/* Header */}
+			<div id="header" class="p-2 border-b">
+				<p>19-18-8-103 - Mother App</p>
+			</div>
+
+			{/* Content */}
+			<div id="content" class="min-h-0 h-full overflow-auto">
+				<div id="grid" class="grid grid-cols-12">
+					
+					{/* App 1: 5-92-39 */}
+					<a 
+						id="col-1" 
+						class="col-span-4 border-r p-2 border-b flex items-center justify-center hover:underline cursor-pointer"
+						href="https://59239.19188103.com"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span>
+							5-92-39
+						</span>
+					</a>
+					<div id="col-2" class="col-span-8 p-2 border-b">
+						An AI-powered qualified leads marketplace that intelligently extracts demand data to automate high-quality supply matching.				
+					</div>
+				</div>
+			</div>
+
+			{/* Footer */}
+			<div id="header" class="p-2 border-t">
+				<p>Email: help@19188103.com</p>
+			</div>
+			
+		</div>
+	</div>
 </Layout>
