@@ -7,12 +7,7 @@ import '../styles/global.css'
 	<div class="h-dvh w-full p-4 flex items-center justify-center overflow-hidden">
 		
 		{/* Card */}
-		<div id="card" class="flex flex-col border md:w-md h-full overflow-hidden">
-
-			{/* Header */}
-			<div id="header" class="p-2 border-b">
-				<p>19-18-8-103</p>
-			</div>
+		<div id="card" class="flex flex-col border md:w-4xl h-full overflow-hidden">
 
 			{/* Content */}
 			<div id="content" class="min-h-0 h-full overflow-auto">
@@ -20,27 +15,64 @@ import '../styles/global.css'
 					
 					{/* App 1: 5-92-39 */}
 					<a 
-						id="col-1" 
-						class="col-span-4 border-r p-2 border-b flex items-center justify-center hover:underline cursor-pointer"
+						id="5-92-39" 
+						class="md:col-span-4 sm:col-span-6 col-span-12 sm:border-r p-4 border-b flex flex-col items-center justify-center hover:underline cursor-pointer"
 						href="https://59239.19188103.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<span>
+						<span class="text-center">
 							5-92-39
 						</span>
+						<p class="text-center text-sm opacity-70">
+							An AI-powered qualified leads marketplace that intelligently extracts demand data to automate high-quality supply matching.				
+						</p>
 					</a>
-					<div id="col-2" class="col-span-8 p-2 border-b">
-						An AI-powered qualified leads marketplace that intelligently extracts demand data to automate high-quality supply matching.				
+
+					{/* App - Soon */}
+					<div 
+						id="soon-1" 
+						class="md:col-span-4 sm:col-span-6 col-span-12 sm:border-r p-4 border-b flex flex-col items-center justify-center pointer-events-none"
+					>
+						<span class="text-center blur-sm">
+							Soon
+						</span>
+						<p class="text-center text-sm opacity-70 blur-sm">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet ligula vitae porttitor ultrices.						
+						</p>
 					</div>
 				</div>
 			</div>
 
 			{/* Footer */}
-			<div id="header" class="p-2 border-t">
-				<p>Email: help@19188103.com</p>
-			</div>
-			
+			<div id="header" class="p-2 border-t justify-center flex text-sm">
+				<p>
+					Ask here: 
+					<a 
+						href="#" 
+						class="email-link hover:underline"
+						data-user="help" 
+						data-domain="19188103.com"
+					>
+						<span>help</span><span aria-hidden="true">&#64;</span><span>19188103&#46;com</span>
+					</a>
+				</p>		
+			</div>		
 		</div>
 	</div>
 </Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const emailLinks = document.querySelectorAll<HTMLAnchorElement>('.email-link');
+		
+		emailLinks.forEach((link) => {
+			const user = link.dataset.user;
+			const domain = link.dataset.domain;
+			
+			if (user && domain) {
+				link.href = `mailto:${user}@${domain}`;
+			}
+		});
+	});
+</script>
