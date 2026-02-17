@@ -1,123 +1,103 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css'
+
+const cards = [
+  {
+    id: '5-92-39',
+    label: '5-92-39',
+    description: 'The AI-powered private tender platform connecting businesses with the right suppliers — and suppliers with the right opportunities.',
+    href: 'https://59239.19188103.com',
+    live: true,
+    colSpan: 'md:col-span-4 col-span-6',
+    borderClasses: 'border-r border-b',
+  },
+  {
+    id: 'soon-1',
+    label: 'Soon',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet ligula vitae porttitor ultrices.',
+    href: null,
+    live: false,
+    colSpan: 'md:col-span-4 col-span-6',
+    borderClasses: 'md:border-r border-b',
+  }
+];
 ---
 
 <Layout>
-	<div class="h-dvh w-full p-4 flex items-center justify-center overflow-hidden">
-		
-		{/* Card */}
-		<div id="card" class="flex flex-col border md:w-4xl h-full overflow-hidden">
+  <div class="h-dvh w-full p-4 flex items-center justify-center overflow-hidden">
 
-			{/* Content */}
-			<div id="content" class="min-h-0 h-full overflow-auto">
-				<div id="grid" class="grid grid-cols-12">
-					
-					{/* App 1: 5-92-39 */}
-					<a 
-						id="5-92-39" 
-						class="h-36 md:col-span-4 col-span-6 border-r p-4 border-b flex flex-col gap-2 hover:underline cursor-pointer"
-						href="https://59239.19188103.com"
-					>
-						<span>
-							5-92-39
-						</span>
-						<p class="text-sm opacity-70">
-							The AI-powered private tender platform connecting businesses with the right suppliers — and suppliers with the right opportunities.						
-						</p>
-					</a>
+    {/* Card */}
+    <div id="card" class="flex flex-col border md:w-4xl h-full overflow-hidden">
 
-					{/* App - Soon-1 */}
-					<div 
-						id="soon-1" 
-						class="relative h-36 md:col-span-4 col-span-6 p-4 md:border-r border-b flex flex-col gap-2 pointer-events-none"
-					>
-						<div class="w-full h-full absolute bg-background opacity-70 backdrop-blur-lg top-0 left-0 z-20"/>
-						<span 
-							class="z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Soon
-						</span>
-						<p 
-							class="text-sm opacity-70 z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet ligula vitae porttitor ultrices.						
-						</p>
-					</div>
+      {/* Content */}
+      <div id="content" class="min-h-0 h-full overflow-auto">
+        <div id="grid" class="grid grid-cols-12">
 
-					{/* App - Soon-2 */}
-					<div 
-						id="soon-2" 
-						class="relative h-36 md:col-span-4 col-span-6 p-4 md:border-r border-b flex flex-col gap-2 pointer-events-none"
-					>
-						<div class="w-full h-full absolute bg-background opacity-70 backdrop-blur-lg top-0 left-0 z-20"/>
-						<span 
-							class="z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Soon 2
-						</span>
-						<p 
-							class="text-sm opacity-70 z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Duis mollis et mauris sit amet sagittis. Mauris vestibulum risus sed enim rutrum, nec bibendum nisl eleifend. Maecenas at ornare velit.						
-						</p>
-					</div>
+          {cards.map((card) =>
+            card.live ? (
+              <a
+                id={card.id}
+                class={`${card.colSpan} ${card.borderClasses} p-4 flex flex-col gap-2 hover:underline cursor-pointer`}
+                href={card.href!}
+              >
+                <span>{card.label}</span>
+                <p class="text-sm opacity-70">{card.description}</p>
+              </a>
+            ) : (
+              <div
+                id={card.id}
+                class={`relative ${card.colSpan} ${card.borderClasses} p-4 flex flex-col gap-2 pointer-events-none`}
+              >
+                <div class="w-full h-full absolute bg-background opacity-70 backdrop-blur-lg top-0 left-0 z-20" />
+                <span
+                  class="z-10"
+                  style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
+                >
+                  {card.label}
+                </span>
+                <p
+                  class="text-sm opacity-70 z-10"
+                  style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
+                >
+                  {card.description}
+                </p>
+              </div>
+            )
+          )}
 
-					{/* App - Soon-3 */}
-					<div 
-						id="soon-3" 
-						class="relative h-36 md:col-span-4 col-span-6 p-4 md:border-r border-b flex flex-col gap-2 pointer-events-none"
-					>
-						<div class="w-full h-full absolute bg-background opacity-70 backdrop-blur-lg top-0 left-0 z-20"/>
-						<span 
-							class="z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Soon 3
-						</span>
-						<p 
-							class="text-sm opacity-70 z-10"
-							style="filter: blur(4px); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;"
-						>
-							Cras semper ornare nibh, a tincidunt leo maximus vel. Ut viverra viverra ultrices. Aliquam nec purus in justo fringilla.					
-						</p>
-					</div>
-				</div>
-			</div>
+        </div>
+      </div>
 
-			{/* Footer */}
-			<div id="header" class="p-2 border-t justify-center flex text-sm">
-				<p>
-					Ask here: 
-					<a 
-						href="#" 
-						class="email-link hover:underline"
-						data-user="help" 
-						data-domain="19188103.com"
-					>
-						<span>help</span><span aria-hidden="true">&#64;</span><span>19188103&#46;com</span>
-					</a>
-				</p>		
-			</div>		
-		</div>
-	</div>
+      {/* Footer */}
+      <div id="header" class="p-2 border-t justify-center flex text-sm">
+        <p>
+          Ask here:&nbsp;
+          <a
+            href="#"
+            class="email-link hover:underline"
+            data-user="help"
+            data-domain="19188103.com"
+          >
+            <span>help</span><span aria-hidden="true">&#64;</span><span>19188103&#46;com</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const emailLinks = document.querySelectorAll<HTMLAnchorElement>('.email-link');
-		
-		emailLinks.forEach((link) => {
-			const user = link.dataset.user;
-			const domain = link.dataset.domain;
-			
-			if (user && domain) {
-				link.href = `mailto:${user}@${domain}`;
-			}
-		});
-	});
+  document.addEventListener('DOMContentLoaded', () => {
+    const emailLinks = document.querySelectorAll<HTMLAnchorElement>('.email-link');
+
+    emailLinks.forEach((link) => {
+      const user = link.dataset.user;
+      const domain = link.dataset.domain;
+
+      if (user && domain) {
+        link.href = `mailto:${user}@${domain}`;
+      }
+    });
+  });
 </script>
