@@ -56,7 +56,7 @@ const cards = [
             card.live ? (
               <a
                 id={card.id}
-                class={`${card.colSpan} ${card.borderClasses} p-2 flex flex-col gap-1 hover:underline cursor-pointer}`}
+                class={`${card.colSpan} ${card.borderClasses} p-2 min-h-36 flex flex-col gap-1 hover:underline cursor-pointer}`}
                 href={card.href!}
               >
                 <span>{card.label}</span>
