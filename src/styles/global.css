@@ -1,4 +1,15 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* Custom variants for different themes */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.blueprint, .blueprint *));
+
+/* Tell Tailwind to use these CSS vars as theme tokens */
+@theme inline {
+  --color-foreground: var(--color-foreground);
+  --color-background: var(--color-background);
+  --color-primary: var(--color-primary);
+}
 
 /* Global font rendering optimizations */
 * {
@@ -8,13 +19,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Default theme (dark mode) */
-@theme {
+:root.dark {
   --color-foreground: oklch(75% 0.183 55.934);
   --color-background: oklch(21.113% 0.01046 39.186);
   --color-primary: oklch(75% 0.183 55.934);
 }
 
+:root.blueprint {
+  --color-foreground: oklch(93% 0.06 85);
+  --color-background: oklch(35% 0.12 240);
+  --color-primary: oklch(93% 0.06 85);
+}
 
 /* Base body styles */
 body {

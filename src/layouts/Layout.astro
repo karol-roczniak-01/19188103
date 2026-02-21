@@ -8,6 +8,10 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#1d1715" />
 		<title>19-18-8-103</title>
+		<script is:inline>
+			const savedTheme = document.cookie.split('; ').find(r => r.startsWith('theme='))?.split('=')[1]
+			document.documentElement.classList.add(savedTheme ?? 'dark')
+		</script>
 	</head>
 	<body>
 		<slot />
