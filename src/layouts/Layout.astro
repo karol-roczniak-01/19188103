@@ -6,11 +6,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#1d1715" />
+		<meta name="theme-color" content="" />
 		<title>19-18-8-103</title>
 		<script is:inline>
-			const savedTheme = document.cookie.split('; ').find(r => r.startsWith('theme='))?.split('=')[1]
-			document.documentElement.classList.add(savedTheme ?? 'dark')
+			const THEME_COLORS = { 
+				dark: '#1d1715', 
+				blueprint: '#003f71', 
+				noir: '#060606', 
+				chalk: '#f2f2f2' 
+			}
+			const t = document.cookie.split('; ').find(r => r.startsWith('theme='))?.split('=')[1] ?? 'dark'
+			document.documentElement.classList.add(t)
+			document.querySelector('meta[name="theme-color"]').setAttribute('content', THEME_COLORS[t] ?? THEME_COLORS.dark)
 		</script>
 	</head>
 	<body>
