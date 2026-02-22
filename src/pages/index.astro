@@ -6,7 +6,7 @@ const cards = [
   {
     id: '53-95',
     label: '53-95',
-    description: 'A single platform for accessing and managing your account and profile across the entire 19-18-8-103 ecosystem.',
+    description: 'Your account and profile',
     href: 'https://5395.19188103.com',
     live: true,
     colSpan: 'md:col-span-4 col-span-6',
@@ -15,7 +15,7 @@ const cards = [
   {
     id: '5-92-39',
     label: '5-92-39',
-    description: 'The AI-powered private tender platform connecting businesses with the right suppliers — and suppliers with the right opportunities.',
+    description: 'AI-powered private tenders',
     href: 'https://59239.19188103.com',
     live: true,
     colSpan: 'md:col-span-4 col-span-6',
@@ -24,7 +24,7 @@ const cards = [
   {
     id: 'soon-1',
     label: 'Soon',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet ligula vitae porttitor ultrices.',
+    description: 'Lorem ipsum dolor sit amet',
     href: null,
     live: false,
     colSpan: 'md:col-span-4 col-span-6',
@@ -33,7 +33,7 @@ const cards = [
   {
     id: '1-8-74',
     label: '1-8-74',
-    description: 'Everything you need to navigate the ecosystem — privacy policies, usage guides, and terms of service.',
+    description: 'Docs, guides and terms',
     href: 'https://1874.19188103.com',
     live: true,
     colSpan: 'md:col-span-4 col-span-6',
@@ -43,7 +43,7 @@ const cards = [
 ---
 
 <Layout>
-  <div class="h-dvh w-full p-4 flex items-center justify-center overflow-hidden">
+  <div class="h-dvh w-full p-2 flex items-center justify-center overflow-hidden">
 
     {/* Card */}
     <div id="card" class="flex flex-col border md:w-4xl h-full overflow-hidden">
@@ -56,7 +56,7 @@ const cards = [
             card.live ? (
               <a
                 id={card.id}
-                class={`${card.colSpan} ${card.borderClasses} p-2 min-h-36 flex flex-col gap-1 hover:underline cursor-pointer}`}
+                class={`${card.colSpan} ${card.borderClasses} p-2 flex flex-col justify-between hover:bg-primary hover:text-background cursor-pointer}`}
                 href={card.href!}
               >
                 <span>{card.label}</span>
@@ -65,7 +65,7 @@ const cards = [
             ) : (
               <div
                 id={card.id}
-                class={`relative ${card.colSpan} ${card.borderClasses} p-4 flex flex-col gap-2 pointer-events-none`}
+                class={`relative ${card.colSpan} ${card.borderClasses} p-2 flex flex-col pointer-events-none`}
               >
                 <div class="w-full h-full absolute bg-background opacity-70 backdrop-blur-lg top-0 left-0 z-20" />
                 <span
