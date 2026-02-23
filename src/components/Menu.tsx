@@ -8,8 +8,8 @@ interface MenuItem {
 }
 
 const options: MenuItem[] = [
-  { label: 'Site One', desc: '', href: 'https://example.com' },
-  { label: 'Site Two', desc: '', href: 'https://example.org' },
+  { label: '53-95', desc: 'Manage your account...', href: 'https://5395.19188103.com' },
+  { label: '5-92-39', desc: 'AI-powered tender platform...', href: 'https://5395.19188103.com' },
 ]
 
 const Menu: React.FC = () => {
@@ -43,7 +43,7 @@ const Menu: React.FC = () => {
           onClick={() => handleSelect(index)}
           className={selected === index ? 'bg-primary text-background cursor-default' : ''}
         >
-          {option.label}
+          {option.label} · {option.desc}
         </li>
       ))}
     </ul>
