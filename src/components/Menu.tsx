@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
+import useMobile from '../hooks/useMobile'
 
 interface MenuItem {
   label: string
@@ -13,6 +14,7 @@ const options: MenuItem[] = [
 ]
 
 const Menu: React.FC = () => {
+  const isMobile = useMobile()
   const [selected, setSelected] = useState(0)
 
   const handleSelect = (index: number) => {
@@ -41,7 +43,7 @@ const Menu: React.FC = () => {
           key={index}
           onMouseEnter={() => setSelected(index)}
           onClick={() => handleSelect(index)}
-          className={selected === index ? 'bg-primary text-background cursor-default' : ''}
+          className={!isMobile && selected === index ? 'bg-primary text-background cursor-default' : ''}
         >
           {option.label} · {option.desc}
         </li>
