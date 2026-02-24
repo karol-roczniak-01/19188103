@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
           key={index}
           onMouseEnter={() => setSelected(index)}
           onClick={() => handleSelect(index)}
-          className={!isMobile && selected === index ? 'bg-primary text-background cursor-default' : ''}
+          className={!isMobile && selected === index ? 'bg-primary text-background cursor-default' : 'cursor-default'}
         >
           {option.label} · {option.desc}
         </li>
