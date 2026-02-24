@@ -11,6 +11,7 @@ interface MenuItem {
 const options: MenuItem[] = [
   { label: '53-95', desc: 'Manage your account...', href: 'https://5395.19188103.com' },
   { label: '5-92-39', desc: 'AI-powered tender platform...', href: 'https://59239.19188103.com' },
+  { label: '1-8-74', desc: 'Docs, guides, and terms...', href: 'https://1874.19188103.com' },
 ]
 
 const Menu: React.FC = () => {
