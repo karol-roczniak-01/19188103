@@ -8,9 +8,15 @@ const Menu: React.FC = () => {
   const isMobile = useMobile()
   const [selected, setSelected] = useState(0)
   const [lang, setLang] = useState<Language>('en')
+  const [email, setEmail] = useState<string | null>(null)
 
   useEffect(() => {
     setLang(getLang())
+  }, [])
+
+  useEffect(() => {
+    const parts = ['help', '19188103', 'com']
+    setEmail(`${parts[0]}@${parts[1]}.${parts[2]}`)
   }, [])
 
   const options = [
@@ -46,6 +52,9 @@ const Menu: React.FC = () => {
           </li>
         ))}
       </ul>
+      <p className='opacity-70'>
+        [Contact] {email ? <a href={`mailto:${email}`}>{email}</a> : ''}
+      </p>
     </>
   )
 }

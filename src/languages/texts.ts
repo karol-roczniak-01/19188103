@@ -10,11 +10,11 @@ export const texts = {
     docsDesc: 'Docs, guides, and terms',
   },
   pl: {
-    welcome: 'Witaj w 19-18-8-103! — Twoje centrum wszystkich naszych aplikacji i usług.',
+    welcome: 'Witaj w 19-18-8-103! — Twoim centrum wszystkich naszych aplikacji i usług.',
     accountDesc: 'Twoje konto',
     directoryDesc: 'Katalog osób',
-    refuteDesc: 'Obalaj fałszywe źródła',
-    tendersDesc: 'Mini przetargi wspierane AI',
+    refuteDesc: 'Fałszywe źródła',
+    tendersDesc: 'Zlecenia B2B wspierane AI',
     docsDesc: 'Dokumenty, poradniki i regulaminy',
   },
 } satisfies Record<Language, Record<string, string>>
